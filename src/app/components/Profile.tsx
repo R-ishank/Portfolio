@@ -15,8 +15,8 @@ export default function Profile() {
     const width = el.clientWidth;
 
     const handleMove = (e: MouseEvent) => {
-      const xVal = e.offsetX; // offsetX is safer than layerX
-      const yVal = e.offsetY; // offsetY is safer than layerY
+      const xVal = e.offsetX;
+      const yVal = e.offsetY;
       const yRotation = 20 * ((xVal - width / 2) / width);
       const xRotation = -20 * ((yVal - height / 2) / height);
 
@@ -41,7 +41,6 @@ export default function Profile() {
     el.addEventListener("mousedown", handleMouseDown);
     el.addEventListener("mouseup", handleMouseUp);
 
-    // Clean up event listeners
     return () => {
       el.removeEventListener("mousemove", handleMove);
       el.removeEventListener("mouseout", handleMouseOut);
@@ -57,72 +56,101 @@ export default function Profile() {
       transition={{ duration: 0.5 }}
       className="bg-gray-800 rounded-lg p-8 shadow-lg"
     >
-      <div className="flex items-center space-x-8">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-8">
         <div id="tilt" className="rounded-lg">
-          <img src="/PassportPRTnobg.jpeg" alt="Profile" className="w-48 h-48" />
+          <img
+            src="/PassportPRTnobg.jpeg"
+            alt="Profile"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
         </div>
         <div>
           <motion.h1
-            className="text-3xl font-bold mb-2"
+            className="text-3xl font-bold mb-2 text-center lg:text-left"
             whileHover={{ scale: 1.05 }}
           >
             Rishank Tiwari
           </motion.h1>
-          <motion.p className="text-gray-400 mb-3" whileHover={{ scale: 1.05 }}>
+          <motion.p
+            className="text-gray-400 mb-3 text-center lg:text-left"
+            whileHover={{ scale: 1.05 }}
+          >
             Full Stack Developer
           </motion.p>
           <motion.div
-            className="box flex mb-1"
+            className="box flex mb-1 justify-center lg:justify-start"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             <p>Core Competencies:</p>
           </motion.div>
-          <div className="space-y-2 mb-2">
+          <div className="space-y-4">
             <div className="mb-1 bg-gray-700 rounded-lg p-4">
-              <p>Core Technologies:</p>
-              <ul className="flex space-x-1">
-                <li>React.js,</li>
-                <li>Next.js,</li>
-                <li>Node.js,</li>
-                <li>JavaScript,</li>
-                <li>HTML,</li>
-                <li>CSS,</li>
-                <li>SQL,</li>
-                <li>MySQL,</li>
-                <li>DynamoDB</li>
-              </ul>
+              <p className="font-semibold mb-2">Core Technologies:</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "React.js",
+                  "Next.js",
+                  "Node.js",
+                  "JavaScript",
+                  "HTML",
+                  "CSS",
+                  "SQL",
+                  "MySQL",
+                  "DynamoDB",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-gray-600 rounded text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
             <div className="mb-3 bg-gray-700 rounded-lg p-4">
-              <p>Cloud & DevOps Tools:</p>
-              <ul className="flex space-x-1">
-                <li>AWS EC2,</li>
-                <li>AWS S3,</li>
-                <li>CloudFront,</li>
-                <li>Load Balancers,</li>
-                <li>Git,</li>
-                <li>Bitbucket,</li>
-                <li>Jira,</li>
-                <li>REST APIs</li>
-              </ul>
+              <p className="font-semibold mb-2">Cloud & DevOps Tools:</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "AWS EC2",
+                  "AWS S3",
+                  "CloudFront",
+                  "Load Balancers",
+                  "Git",
+                  "Bitbucket",
+                  "Jira",
+                  "REST APIs",
+                ].map((tool) => (
+                  <span
+                    key={tool}
+                    className="px-2 py-1 bg-gray-600 rounded text-sm"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
           <motion.button
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center space-x-2"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center space-x-2 mt-4"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onMouseEnter={() => setIsHovered(false)}
             onMouseLeave={() => setIsHovered(true)}
           >
             <Download size={16} />
-            <a href="https://presume.s3.ap-south-1.amazonaws.com/Rishank_Tiwari_Resume.docx">
+            <a
+              href="https://presume.s3.ap-south-1.amazonaws.com/Rishank_Tiwari_Resume.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span>Download Resume</span>
             </a>
           </motion.button>
         </div>
       </div>
       <motion.div
-        className="mt-6 grid grid-cols-2 gap-4"
+        className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{ duration: 0.3 }}

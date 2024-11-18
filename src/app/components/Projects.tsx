@@ -71,7 +71,7 @@ const projects = [
     description: 'Next.js application which showcases the Times Food & Nightlife Awards celebrates the best in F&B and honours those making a difference in the world of hospitality through their innovation and ...',
     technologies1:" Next.js",
     technologies2:"Serverless",
-    technologies3:"MySQL & DynamoDB"
+    technologies3:"DynamoDB"
   },
 ];
 
