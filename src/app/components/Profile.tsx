@@ -14,9 +14,9 @@ export default function Profile() {
     const height = el.clientHeight;
     const width = el.clientWidth;
 
-    const handleMove = (e) => {
-      const xVal = e.layerX;
-      const yVal = e.layerY;
+    const handleMove = (e: MouseEvent) => {
+      const xVal = e.offsetX; // offsetX is safer than layerX
+      const yVal = e.offsetY; // offsetY is safer than layerY
       const yRotation = 20 * ((xVal - width / 2) / width);
       const xRotation = -20 * ((yVal - height / 2) / height);
 
@@ -58,7 +58,7 @@ export default function Profile() {
       className="bg-gray-800 rounded-lg p-8 shadow-lg"
     >
       <div className="flex items-center space-x-8">
-        <div id="tilt" className=" rounded-lg">
+        <div id="tilt" className="rounded-lg">
           <img src="/PassportPRTnobg.jpeg" alt="Profile" className="w-48 h-48" />
         </div>
         <div>
@@ -115,7 +115,9 @@ export default function Profile() {
             onMouseLeave={() => setIsHovered(true)}
           >
             <Download size={16} />
-            <a href='https://presume.s3.ap-south-1.amazonaws.com/Rishank_Tiwari_Resume.docx'><span>Download Resume</span></a>
+            <a href="https://presume.s3.ap-south-1.amazonaws.com/Rishank_Tiwari_Resume.docx">
+              <span>Download Resume</span>
+            </a>
           </motion.button>
         </div>
       </div>
