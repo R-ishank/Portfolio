@@ -145,7 +145,8 @@ export default function Profile() {
           >
             <Download size={16} />
             <a
-              href="https://presume.s3.ap-south-1.amazonaws.com/Rishank_Tiwari_Resume.docx"
+              href="https://presume.s3.ap-south-1.amazonaws.com/Rishank_Tiwari_.docx"
+              
               target="_blank"
               rel="noopener noreferrer"
             >
