@@ -2,7 +2,7 @@ import Profile from '../app/components/Profile'
 import Experience from '../app/components/Experience'
 import Projects from '../app/components/Projects'
 import ContactPopup from '../app/components/ContactPopup'
-
+import Footer from './components/Footer'
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <ContactPopup />
+        <Footer/>
       </div>
     </main>
   )

@@ -61,7 +61,7 @@ export default function Profile() {
           <img
             src="/PassportPRTnobg.jpeg"
             alt="Profile"
-            className="w-48 h-48 object-cover rounded-lg"
+            className="lg:w-[27rem] lg:h-56 w-44 h-44 object-cover rounded-lg"
           />
         </div>
         <div>
@@ -98,6 +98,11 @@ export default function Profile() {
                   "SQL",
                   "MySQL",
                   "DynamoDB",
+                  "Serverless Architecture",
+                  "Api Gateway",
+                  "lambda",
+                  "CSR (Client Side Rendering)",
+                  "SSR (Server Side Rendering)",
                 ].map((tech) => (
                   <span
                     key={tech}

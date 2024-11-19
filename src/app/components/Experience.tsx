@@ -7,13 +7,13 @@ const experiences = [
     company: 'Bennett, Coleman & Co. Ltd.',
     position: 'Assistant Manager',
     duration: '2023 - Present',
-    description: 'Developend and maintained innovative web applications with team of developers and moinored the cloud architecture.',
+    description: 'Developend and maintained innovative web applications with team of developers and maintained the cloud architecture.',
   },
   {
     company: 'Bennett, Coleman & Co. Ltd.',
     position: 'Senior Officer',
     duration: '2021 - 2023',
-    description: 'Developed and maintained multiple client projects using React, Nejt.js, Node.js and gathered hands on experience in AWS.',
+    description: 'Developed and maintained multiple client projects using React, Next.js, Node.js and gathered hands on experience in AWS.',
   },
 ]
 
