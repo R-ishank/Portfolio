@@ -29,11 +29,13 @@ export default function Profile() {
     };
 
     const handleMouseDown = () => {
-      el.style.transform = "perspective(500px) scale(0.9) rotateX(0) rotateY(0)";
+      el.style.transform =
+        "perspective(500px) scale(0.9) rotateX(0) rotateY(0)";
     };
 
     const handleMouseUp = () => {
-      el.style.transform = "perspective(500px) scale(1.1) rotateX(0) rotateY(0)";
+      el.style.transform =
+        "perspective(500px) scale(1.1) rotateX(0) rotateY(0)";
     };
 
     el.addEventListener("mousemove", handleMove);
@@ -87,22 +89,38 @@ export default function Profile() {
           <div className="space-y-4">
             <div className="mb-1 bg-gray-700 rounded-lg p-4">
               <p className="font-semibold mb-2">Core Technologies:</p>
+              <p className="font-medium mb-2">Frontend:</p>
+
               <div className="flex flex-wrap gap-2">
                 {[
                   "React.js",
                   "Next.js",
-                  "Node.js",
+                  "Material UI",
+                  "Tailwind CSS",
                   "JavaScript",
                   "HTML",
                   "CSS",
+                  "Serverless Architecture",
+                  "CSR (Client Side Rendering)",
+                  "SSR (Server Side Rendering)",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-gray-600 rounded text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <p className="font-medium mb-2">Backend & Database:</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Node.js",
                   "SQL",
                   "MySQL",
                   "DynamoDB",
-                  "Serverless Architecture",
                   "Api Gateway",
                   "lambda",
-                  "CSR (Client Side Rendering)",
-                  "SSR (Server Side Rendering)",
                 ].map((tech) => (
                   <span
                     key={tech}
@@ -146,7 +164,6 @@ export default function Profile() {
             <Download size={16} />
             <a
               href="https://presume.s3.ap-south-1.amazonaws.com/Rishank_Tiwari_.docx"
-              
               target="_blank"
               rel="noopener noreferrer"
             >
